@@ -16,7 +16,7 @@ public class DinoDriver2
         //Dinosaur.setPop(pop.length); 
         List<Dinosaur> dinoPop = new ArrayList<Dinosaur>(); 
         
-        for(int i = 0; i < 30; i++)
+        for(int i = 0; i < 25; i++)
         {
             double rand = Math.random(); 
             if(rand < 0.33) //make a TRex
@@ -59,13 +59,7 @@ public class DinoDriver2
             battleRoundSize = dinoPop.size(); 
         }
         
-        for( Dinosaur d : dinoPop ) // d gets assigned to pop[i]
-        {
-            if(d.getHealth() > 0)
-            {
-                System.out.println(d.toString()); // can also just put d
-            }
-        }
+        
         
              
         
@@ -101,6 +95,13 @@ public class DinoDriver2
                 }
             }
         }//round is over
+        for( Dinosaur d : p ) // d gets assigned to pop[i]
+        {
+            if(d.getHealth() > 0)
+            {
+                System.out.println(d.toString()); // can also just put d
+            }
+        }
         System.out.println("*********** Population: " + p.size() +
         " ***********"); 
         System.out.println("***********   Total Battles: " + battles

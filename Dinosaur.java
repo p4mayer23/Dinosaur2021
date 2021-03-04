@@ -205,12 +205,14 @@ public abstract class Dinosaur
         {
             //i2 = itr.next(); 
             loser.setHealth(0);  
+            System.out.println("\t"+i2);
             p.remove(i2);  
         }
         if(this.getHealth() <= 0)
         {
             //i1 = itr.next();
             this.setHealth(0); 
+            System.out.println("\t"+i1);
             p.remove(i1); 
         }
         // increase the wins for this dino
@@ -223,17 +225,20 @@ public abstract class Dinosaur
     
     public abstract boolean attack(Dinosaur other);
     
-    private boolean breedable(Dinosaur mate)
+    public boolean isAMate(Dinosaur m)
     {
-        if(this.getGender().equals(mate.getGender()))
+        if(this.getGender().equals(m.getGender()))
         {
             return false;
         }
-        else if(this.getAge() > 10 && mate.getAge() > 10)
+        else if(this.getAge() > 7 && m.getAge() > 7)
         {
-           if(this.getType().equals(mate.getType()))
+           if(this.getAge() < 25 && m.getAge() < 25)
            {
-               return true; 
+               if(this.getType().equals(m.getType()))
+               {
+                   return true; 
+               }
            }
         }
         return false;
